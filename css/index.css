@@ -1,0 +1,114 @@
+@font-face {
+  font-family:AliMedium;
+  src:url('./AlimamaDongFangDaKai-Regular.ttf')
+}
+
+/* 最上方导航栏高度 */
+.navbar-container {
+  height: 3.5rem !important;
+  
+}
+/* 右侧导航栏功能按钮 */
+.navbar-links-wrapper {
+  height: 3.5rem !important;
+}
+
+/* 左上角logo和标题 */
+.site-brand {
+  height: 3.5rem !important;
+  line-height: 3.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  font-size: 1rem !important;
+  font-family: AliMedium !important;
+
+}
+/* 右上角item */
+
+.navbar-links .navbar-links__item > .link{
+  font-size: 0.9rem !important;
+}
+
+.navbar-links__item{
+  margin-left: 0.9rem !important;
+}
+/* 中间内容 */
+.banner-brand__wrapper {
+
+
+}
+/* 定义一个名为typing的关键帧动画 */
+@keyframes typing {
+  0%, 100% { width: 0; }
+  50% { width: 100%; }
+
+}
+
+/* 定义一个名为blink的关键帧动画，用于创建光标闪烁效果 */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.banner-brand__wrapper .banner-brand__content .title {
+ 
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #FFC83D !important;
+  --tw-gradient-from: #FFC83D !important;
+  --tw-gradient-to: #FFC83D !important;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: AliMedium !important;
+  font-size: 20px;
+  animation: typing 6s infinite steps(30, end), blink 0.75s step-end infinite;
+  border-right: 3px solid;
+  padding-right: 5px; /* 调整光标与文字的距离 */
+  /* 设置与文字相匹配的行高 */
+  line-height: 1 !important; /* 可根据需要进行调整 */
+  cursor: pointer;
+}
+
+/* 可选：设置动画暂停时的样式 */
+.banner-brand__wrapper .banner-brand__content .title:hover {
+ animation-play-state: paused;
+}
+
+
+/* 中间内容和底部相邻的部分，没用，所以去掉了  */
+.theme-container .theme-reco-default-content {
+  margin-bottom: 0 !important;
+  border: 0 !important;
+}
+
+/* 主页大背景 */
+.home-wrapper{
+  position: relative !important;
+
+   /* height: calc(100vh - 35.482px) !important; */
+   /* width: 100%; */
+
+  /* background: url(/my-blog/bg.png)center center no-repeat !important; */
+  /* background-size: 100% 100% !important; */
+  /* background-color: red  !important; */
+  
+}
+
+/* 底部 */
+.footer-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 0 0 0 !important;
+  /* background-color: rgb(255 255 255 / 0.6) !important; */
+  border: 0 !important;
+  height: 35.482px !important;
+}
+.footer-wrapper >:first-child {
+  display: none !important;
+}
+
+

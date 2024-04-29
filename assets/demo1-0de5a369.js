@@ -1,0 +1,1 @@
+import{_ as s,p as t,q as _,s as e}from"./framework-aa5c4115.js";const o={},c={class:"component"},n=e("div",{class:"left"},"123",-1),d=e("div",{class:"center"},"123",-1),a=e("div",{class:"right"},"123",-1),i=[n,d,a];function r(l,f){return t(),_("div",c,i)}const h=s(o,[["render",r],["__file","demo1.vue"]]);export{h as default};

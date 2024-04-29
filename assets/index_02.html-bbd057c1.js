@@ -1,0 +1,52 @@
+import{_ as n,p as s,q as a,Y as t}from"./framework-aa5c4115.js";const p={},e=t(`<div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code>
+<span class="token comment">/*函数节流*/</span>
+<span class="token keyword">function</span> <span class="token function">throttle</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> interval</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> enterTime <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//触发的时间</span>
+  <span class="token keyword">var</span> gapTime <span class="token operator">=</span> interval <span class="token operator">||</span> <span class="token number">300</span> <span class="token punctuation">;</span><span class="token comment">//间隔时间，如果interval不传，则默认300ms</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> context <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> backTime <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//第一次函数return即触发的时间</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>backTime <span class="token operator">-</span> enterTime <span class="token operator">&gt;</span> gapTime<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      enterTime <span class="token operator">=</span> backTime<span class="token punctuation">;</span><span class="token comment">//赋值给第一次触发的时间，这样就保存了第二次触发的时间</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+ 
+<span class="token comment">/*函数防抖*/</span>
+<span class="token keyword">function</span> <span class="token function">debounce</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> interval</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> timer<span class="token punctuation">;</span>
+  <span class="token keyword">var</span> gapTime <span class="token operator">=</span> interval <span class="token operator">||</span> <span class="token number">1000</span><span class="token punctuation">;</span><span class="token comment">//间隔时间，如果interval不传，则默认1000ms</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> context <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> args <span class="token operator">=</span> arguments<span class="token punctuation">;</span><span class="token comment">//保存此处的arguments，因为setTimeout是全局的，arguments不是防抖函数需要的。</span>
+    timer <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> gapTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+ 
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  throttle<span class="token punctuation">,</span>
+  debounce
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用之</p><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token comment">// import tool from &quot;@src/static/js/tool.js&quot;; 引入封装的函数</span>
+<span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+   <span class="token literal-property property">data</span><span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">win_scrollTop</span><span class="token operator">:</span><span class="token number">0</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token literal-property property">onPageScroll</span><span class="token operator">:</span> tool<span class="token punctuation">.</span><span class="token function">throttle</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">win_scrollTop</span><span class="token operator">:</span> msg<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>scrollTop
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+   <span class="token literal-property property">gotoUnlock</span><span class="token operator">:</span> tool<span class="token punctuation">.</span><span class="token function">debounce</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">saveUserInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+   <span class="token function-variable function">saveUserInfo</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">111</span><span class="token punctuation">)</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,3),o=[e];function c(l,i){return s(),a("div",null,o)}const r=n(p,[["render",c],["__file","index_02.html.vue"]]);export{r as default};

@@ -1,0 +1,1 @@
+import{_ as a,p as t,q as i,s as e,R as n}from"./framework-aa5c4115.js";const s={},c=e("h2",{id:"pinia-是vuex的下一版本",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#pinia-是vuex的下一版本","aria-hidden":"true"},"#"),n(" pinia 是Vuex的下一版本")],-1),r=[c];function o(_,d){return t(),i("div",null,r)}const l=a(s,[["render",o],["__file","pinia.html.vue"]]);export{l as default};

@@ -1,0 +1,31 @@
+import{_ as s,p as n,q as a,Y as t}from"./framework-aa5c4115.js";const e={},p=t(`<h2 id="条件渲染v-else-if" tabindex="-1"><a class="header-anchor" href="#条件渲染v-else-if" aria-hidden="true">#</a> 条件渲染v-else-if</h2><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">&quot;disable&quot;</span><span class="token operator">&gt;</span>type的值改变为<span class="token constant">B</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">&quot;disableOther&quot;</span><span class="token operator">&gt;</span>type的值改变为其他<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">&quot;type === &#39;A&#39;&quot;</span><span class="token operator">&gt;</span>
+  <span class="token constant">A</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>div v<span class="token operator">-</span><span class="token keyword">else</span><span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">&quot;type === &#39;B&#39;&quot;</span><span class="token operator">&gt;</span>
+  <span class="token constant">B</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>div v<span class="token operator">-</span><span class="token keyword">else</span><span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">&quot;type === &#39;C&#39;&quot;</span><span class="token operator">&gt;</span>
+  <span class="token constant">C</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>div v<span class="token operator">-</span><span class="token keyword">else</span><span class="token operator">&gt;</span>
+  Not <span class="token constant">A</span><span class="token operator">/</span><span class="token constant">B</span><span class="token operator">/</span><span class="token constant">C</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span> 
+  
+<span class="token operator">&lt;</span>script setup<span class="token operator">&gt;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ref<span class="token punctuation">,</span> reactive<span class="token punctuation">,</span> computed <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;vue&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> type <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token string">&#39;A&#39;</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token function-variable function">disable</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// vue3需要使用.value来获取值，如果是vue2 就是用this</span>
+    type<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">&#39;B&#39;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> <span class="token function-variable function">disableOther</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// vue3需要使用.value来获取值，如果是vue2 就是用this</span>
+    type<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">&#39;&#39;</span>
+<span class="token punctuation">}</span>
+
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,2),o=[p];function l(r,c){return n(),a("div",null,o)}const k=s(e,[["render",l],["__file","tiaojianxuanranv-else-if.html.vue"]]);export{k as default};

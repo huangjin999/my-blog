@@ -1,0 +1,1 @@
+import{_ as e,p as t,q as o,s}from"./framework-aa5c4115.js";const c={},n=s("p",null,"https://www.dcloud.io/",-1),_=[n];function l(r,a){return t(),o("div",null,_)}const i=e(c,[["render",l],["__file","index.html.vue"]]);export{i as default};
