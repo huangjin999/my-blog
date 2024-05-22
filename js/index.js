@@ -73,7 +73,7 @@
 /*         console.log(battery.level * 100 + "%");
         console.log(battery.charging); */
 // 获取当前日期对象
-export function today() {
+export const today=() => {
   return new Date();
 };
 
